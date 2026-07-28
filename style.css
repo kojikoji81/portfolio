@@ -10,70 +10,22 @@ html {
 body {
     background-color: #050508;
     color: #e0e0e0;
-    font-family: "Sawarabi Gothic", "MS PGothic", "ＭＳ Ｐゴシック", "Osaka", "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Osaka", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
     font-size: 12px;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     background-image: radial-gradient(#1a1a2e 1px, transparent 0);
     background-size: 8px 8px; /* 薄いドット背景 */
-    overflow-x: hidden;
-}
-
-.font-retro {
-    font-family: "DotGothic16", "MS PGothic", monospace, sans-serif;
-}
-
-/* --- 最上部 Marquee (電光掲示板風スクロール) --- */
-.top-marquee-bar {
-    display: flex;
-    align-items: center;
-    background: #000;
-    border-bottom: 2px solid #00ff66;
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
-    height: 32px;
-    padding: 0 10px;
-}
-
-.marquee-tag {
-    background: #ff0055;
-    color: #fff;
-    font-weight: bold;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 2px;
-    margin-right: 10px;
-}
-
-.marquee-window {
-    flex-grow: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-
-.marquee-content {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee-anim 16s linear infinite;
-    color: #00ff66;
-    font-weight: bold;
-    font-size: 13px;
-    text-shadow: 0 0 5px #00ff66;
-}
-
-@keyframes marquee-anim {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
 }
 
 /* 全体コンテナテーブル */
 table.main-layout {
-    width: 840px;
-    margin: 20px auto;
+    width: 820px;
+    margin: 0 auto;
     border: 1px solid #00ff66;
     background-color: #0c0c12;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
 }
 
 /* リンク共通スタイル */
@@ -84,8 +36,8 @@ a:hover { color: #ffff00; background-color: #0000ff; text-decoration: none; }
 /* ヘッダー */
 td.header-cell {
     border-bottom: 1px solid #00ff66;
-    background: linear-gradient(180deg, #15152a, #0c0c16);
-    padding: 20px;
+    background-color: #121220;
+    padding: 15px;
     text-align: center;
 }
 
@@ -97,59 +49,32 @@ td.header-cell {
     color: #aaaaaa;
 }
 
-/* --- 波打つレインボーメインタイトル --- */
+.breadcrumb-nav a {
+    color: #00ffff;
+    text-decoration: underline;
+}
+
+.breadcrumb-nav .current {
+    color: #ffff00;
+    font-weight: bold;
+}
+
 h1.site-title {
-    font-size: 26px;
+    font-size: 20px;
     color: #00ff66;
-    margin: 8px 0;
+    margin: 5px 0;
     font-weight: bold;
     letter-spacing: 2px;
-    display: inline-block;
-}
-
-.char-wave {
-    display: inline-block;
-    animation: wave-jump 1.2s ease-in-out infinite alternate, rainbow-color 4s linear infinite;
-}
-
-@keyframes wave-jump {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
-}
-
-@keyframes rainbow-color {
-    0% { color: #ff3366; text-shadow: 0 0 8px #ff3366; }
-    20% { color: #ff9933; text-shadow: 0 0 8px #ff9933; }
-    40% { color: #ffff33; text-shadow: 0 0 8px #ffff33; }
-    60% { color: #33cc66; text-shadow: 0 0 8px #33cc66; }
-    80% { color: #3399ff; text-shadow: 0 0 8px #3399ff; }
-    100% { color: #cc33ff; text-shadow: 0 0 8px #cc33ff; }
-}
-
-.site-subtitle {
-    font-size: 12px;
-    color: #ffd700;
-    margin: 4px 0 0 0;
-}
-
-/* 点滅アニメーション */
-.blink-text {
-    animation: retro-blink 1.2s step-start infinite;
-}
-.blink-fast {
-    animation: retro-blink 0.6s step-start infinite;
-}
-@keyframes retro-blink {
-    50% { opacity: 0; }
+    text-shadow: 0 0 5px #00ff66;
 }
 
 /* レイアウトセル */
 td.sidebar-cell {
-    width: 210px;
+    width: 200px;
     vertical-align: top;
     border-right: 1px solid #00ff66;
     background-color: #080810;
-    padding: 12px;
+    padding: 10px;
 }
 
 td.content-cell {
@@ -173,15 +98,6 @@ td.content-cell {
     padding: 3px 6px;
     border-bottom: 1px solid #444466;
     font-size: 11px;
-}
-
-.retro-select {
-    background: #000;
-    color: #00ffcc;
-    border: 1px solid #00ffcc;
-    padding: 2px;
-    font-size: 10px;
-    width: 100%;
 }
 
 /* サイドメニュー */
@@ -213,6 +129,40 @@ ul.nav-list a:hover {
 
 ul.nav-list li.active-menu a {
     color: #ffff00;
+    font-weight: bold;
+}
+
+/* ページ内クイックジャンプナビゲーション */
+.quick-nav-bar {
+    background-color: #111122;
+    border: 1px solid #333355;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+
+.quick-nav-title {
+    color: #ffff00;
+    font-weight: bold;
+}
+
+.quick-nav-btn {
+    background: #000;
+    color: #00ffff !important;
+    border: 1px solid #00ffff;
+    padding: 2px 8px;
+    text-decoration: none !important;
+    font-size: 11px;
+    transition: all 0.2s;
+}
+
+.quick-nav-btn:hover {
+    background: #00ffff;
+    color: #000 !important;
     font-weight: bold;
 }
 
@@ -343,59 +293,6 @@ table.skill-detail-table td {
     margin-bottom: 4px;
 }
 
-/* 動く文字体験コーナー */
-.retro-input-full {
-    width: 100%;
-    background: #000;
-    border: 1px solid #00ffcc;
-    color: #ffff00;
-    padding: 6px;
-    font-size: 13px;
-}
-
-.effect-sub-box {
-    background: #05050a;
-    border: 1px dashed #444466;
-    padding: 8px;
-}
-
-.effect-label {
-    color: #00ffff;
-    font-size: 11px;
-    margin-bottom: 4px;
-}
-
-.preview-area {
-    font-size: 16px;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-}
-
-.char-jump {
-    display: inline-block;
-    animation: jump-anim 1.4s ease-in-out infinite;
-}
-@keyframes jump-anim {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-8px) rotate(-5deg); }
-    50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(-4px) rotate(5deg); }
-}
-
-/* マウス追従文字 */
-.cursor-follower-text {
-    position: absolute;
-    pointer-events: none;
-    font-size: 12px;
-    font-weight: bold;
-    color: #ffff00;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-    white-space: nowrap;
-    z-index: 9999;
-    transition: opacity 0.3s;
-}
-
 /* カレンダー */
 .calendar-header {
     display: flex;
@@ -459,14 +356,45 @@ table.calendar-table td.has-post:hover {
     color: #ffff00;
 }
 
+table.calendar-table td.selected-day {
+    background-color: #444400 !important;
+    color: #ffff00 !important;
+    border: 1px solid #ffff00 !important;
+}
+
+table.calendar-table td.today-cell {
+    border: 1px solid #00ffff !important;
+}
+
+.filter-info-bar {
+    background-color: #1a1a00;
+    border: 1px solid #ffff00;
+    color: #ffff00;
+    padding: 5px 10px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset-filter-btn {
+    background: #333;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 2px 6px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
 /* フッター */
 td.footer-cell {
     border-top: 1px solid #00ff66;
     background-color: #080810;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
     font-size: 11px;
-    color: #aaaaaa;
+    color: #888888;
 }
 
 @media (max-width: 840px) {
