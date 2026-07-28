@@ -6,8 +6,22 @@
     <title>kojikoji81のポートフォリオ | Official Site</title>
     <meta name="description" content="kojikoji81のポートフォリオ - データサイエンティスト / データアナリスト">
     <link rel="stylesheet" href="style.css">
+    <!-- レトロ感のあるフォントの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- 1. 最上部：電光掲示板風の流れる文字 (Marquee) -->
+    <div class="top-marquee-bar">
+        <div class="marquee-tag font-retro">NEWS</div>
+        <div class="marquee-window">
+            <div class="marquee-content" id="main-marquee">
+                ★ Welcome to kojikoji81's Official Portfolio! ★ 本日の訪問感謝です！ ★ データ分析・LLM活用・BI構築 ★ キリバン報告はBBSまで♪ ★ ゆっくりしていってね！(・∀・) ★
+            </div>
+        </div>
+    </div>
 
     <!-- メインレイアウト用テーブル -->
     <table class="main-layout" cellspacing="0" cellpadding="0">
@@ -16,10 +30,15 @@
         <tr>
             <td colspan="2" class="header-cell">
                 <!-- サイト共通パンくずナビゲーション -->
-                <div class="breadcrumb-nav">
+                <div class="breadcrumb-nav font-retro">
                     <span class="current">🏠 HOME (ポートフォリオ)</span>
                 </div>
-                <h1 class="site-title"><a href="index.html" style="color: inherit; text-decoration: none;">kojikoji81のポートフォリオ</a></h1>
+                
+                <!-- 2. 波打つ＆虹色タイトル -->
+                <h1 class="site-title font-retro" id="wavy-main-title">
+                    kojikoji81のポートフォリオ
+                </h1>
+                <p class="site-subtitle font-retro blink-text">✨ データサイエンティスト / データアナリスト の個人WEBサイト ✨</p>
             </td>
         </tr>
 
@@ -30,24 +49,36 @@
 
                 <!-- サイト共通ナビゲーション MENU (全ページで完全同一) -->
                 <div class="side-box">
-                    <div class="side-box-title">■ MENU</div>
-                    <ul class="nav-list">
+                    <div class="side-box-title font-retro">■ MENU</div>
+                    <ul class="nav-list font-retro">
                         <li class="active-menu"><a href="#top">🏠 ホーム (トップ)</a></li>
                         <li><a href="#profile-sec">👤 自己紹介</a></li>
                         <li><a href="#skills-sec">💻 技術スタック</a></li>
-
                         <li><a href="#experience-sec">📁 実務経験・実績</a></li>
+                        <li><a href="#retro-text-sec">✨ 動く文字ラボ</a></li>
                         <li><a href="diary/index.html"><strong>📖 日記 (Diary)</strong></a></li>
                     </ul>
                 </div>
 
                 <!-- 日記カレンダー -->
                 <div class="side-box">
-                    <div class="side-box-title">■ DIARY CALENDAR</div>
+                    <div class="side-box-title font-retro">■ DIARY CALENDAR</div>
                     <div style="font-size: 10px; color: #aaaaaa; margin-bottom: 5px; text-align: center;">
                         緑色の日付クリックで日記へ
                     </div>
                     <div id="calendar-widget"></div>
+                </div>
+
+                <!-- マウス追従文字の設定 -->
+                <div class="side-box">
+                    <div class="side-box-title font-retro">■ ANIMATION SETTING</div>
+                    <div style="font-size: 11px; margin-bottom: 5px;">マウス追従テキスト:</div>
+                    <select id="cursor-text-select" class="retro-select font-retro">
+                        <option value="★ WELCOME ★">★ WELCOME ★</option>
+                        <option value="✨ DATA SCIENCE ✨">✨ DATA SCIENCE ✨</option>
+                        <option value="(・∀・) (ﾟ∀ﾟ)">(・∀・) (ﾟ∀ﾟ)</option>
+                        <option value="OFF">【OFF】非表示</option>
+                    </select>
                 </div>
 
             </td>
@@ -60,14 +91,14 @@
                 <!-- 1. メインサブコンテンツ：日記へのリンク枠 -->
                 <div class="diary-entry" id="diary-sec">
                     <div class="entry-header">
-                        <span class="entry-date-title">📖 kojikoji81の日記 (Diary)</span>
-                        <span class="entry-tag">Main Content</span>
+                        <span class="entry-date-title font-retro">📖 kojikoji81の日記 (Diary)</span>
+                        <span class="entry-tag blink-fast">Main Content</span>
                     </div>
                     <div class="entry-body">
                         <p><strong>最新エントリー：</strong> 2026/07/25（土） 「母が亡くなったので初めてみました」</p>
                         <p>日々の出来事や思ったことを綴っている個人日記です。カレンダー検索も可能です。</p>
                         <p style="margin-top: 15px;">
-                            <a href="diary/index.html" class="retro-action-btn">📖 kojikoji81の日記を読む &rarr;</a>
+                            <a href="diary/index.html" class="retro-action-btn font-retro">📖 kojikoji81の日記を読む &rarr;</a>
                         </p>
                     </div>
                 </div>
@@ -75,7 +106,7 @@
                 <!-- 2. 自己紹介・概要 -->
                 <div class="diary-entry" id="profile-sec">
                     <div class="entry-header">
-                        <span class="entry-date-title">Profile & Summary (自己紹介・概要)</span>
+                        <span class="entry-date-title font-retro">Profile & Summary (自己紹介・概要)</span>
                         <span class="entry-tag">About</span>
                     </div>
                     <div class="entry-body">
@@ -92,7 +123,7 @@
                 <!-- 3. 技術スタック詳細 -->
                 <div class="diary-entry" id="skills-sec">
                     <div class="entry-header">
-                        <span class="entry-date-title">Technical Skills (詳細技術スタック)</span>
+                        <span class="entry-date-title font-retro">Technical Skills (詳細技術スタック)</span>
                         <span class="entry-tag">Skills</span>
                     </div>
                     <div class="entry-body">
@@ -117,22 +148,21 @@
                                 <th>手法・領域</th>
                                 <td>需要予測モデル構築, レコメンデーション, 自然言語処理 (NLP), 感情分析, ログ解析, CV改善, データマネジメント, PM / プロジェクトマネジメント</td>
                             </tr>
-
                         </table>
                     </div>
                 </div>
 
-                <!-- 4. 実務経験・実績 (一般化・ぼかした内容) -->
+                <!-- 4. 実務経験・実績 -->
                 <div class="diary-entry" id="experience-sec">
                     <div class="entry-header">
-                        <span class="entry-date-title">Experience & Project Achievements (実務経験・実績)</span>
+                        <span class="entry-date-title font-retro">Experience & Project Achievements (実務経験・実績)</span>
                         <span class="entry-tag">Projects</span>
                     </div>
                     <div class="entry-body">
 
                         <!-- プロジェクト1 -->
                         <div class="project-block">
-                            <div class="project-title">1. データマネジメント ＆ アプリログ・ユーザー行動解析</div>
+                            <div class="project-title font-retro">1. データマネジメント ＆ アプリログ・ユーザー行動解析</div>
                             <p class="project-desc">
                                 社内におけるデータ利活用を推進するための分析基盤構築、技術選定、データ整備・運用方針の策定を担当。
                             </p>
@@ -145,7 +175,7 @@
 
                         <!-- プロジェクト2 -->
                         <div class="project-block">
-                            <div class="project-title">2. 機械学習・予測モデル構築 ＆ 活用支援</div>
+                            <div class="project-title font-retro">2. 機械学習・予測モデル構築 ＆ 活用支援</div>
                             <p class="project-desc">
                                 機械学習を用いた各種予測モデルの構築、ならびにクライアントや社内チームへの活用レクチャー（導入支援）を担当。
                             </p>
@@ -158,7 +188,7 @@
 
                         <!-- プロジェクト3 -->
                         <div class="project-block">
-                            <div class="project-title">3. 生成AI・自然言語処理（RAG・文書検索システム）</div>
+                            <div class="project-title font-retro">3. 生成AI・自然言語処理（RAG・文書検索システム）</div>
                             <p class="project-desc">
                                 LLMや自然言語処理技術を活用したナレッジ検索システムおよび業務効率化PoCの推進。
                             </p>
@@ -170,7 +200,7 @@
 
                         <!-- プロジェクト4 -->
                         <div class="project-block">
-                            <div class="project-title">4. BIダッシュボード構築 ＆ プロジェクトマネジメント (PM)</div>
+                            <div class="project-title font-retro">4. BIダッシュボード構築 ＆ プロジェクトマネジメント (PM)</div>
                             <p class="project-desc">
                                 要件定義からデータ整形、ダッシュボード構築、運用定着までプロジェクトマネージャー（PM）/メンバーとしてリード。
                             </p>
@@ -183,12 +213,38 @@
                     </div>
                 </div>
 
+                <!-- 5. 昔のブログ風「動く文字」変換体験コーナー -->
+                <div class="diary-entry" id="retro-text-sec">
+                    <div class="entry-header">
+                        <span class="entry-date-title font-retro">✨ 昔のブログ風「動く文字」体験コーナー</span>
+                        <span class="entry-tag blink-fast">Retro Effect</span>
+                    </div>
+                    <div class="entry-body">
+                        <p style="font-size: 12px; margin-bottom: 10px;">
+                            お好きな文字を入力すると、昔の個人ホームページで大流行した「動く文字アニメーション」に変換されます！
+                        </p>
+                        <input type="text" id="custom-text-input" value="ようこそ！kojikoji81のホームページへ！" class="retro-input-full font-retro" placeholder="テキストを入力...">
+                        
+                        <div class="effect-box-container" style="margin-top: 15px;">
+                            <div class="effect-sub-box">
+                                <div class="effect-label font-retro">① 1文字跳ね波打ちレインボー</div>
+                                <div id="preview-wavy" class="preview-area font-retro"></div>
+                            </div>
+                            <div class="effect-sub-box" style="margin-top: 10px;">
+                                <div class="effect-label font-retro">② ぴょこぴょこダンス (Jumping)</div>
+                                <div id="preview-jump" class="preview-area font-retro"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </td>
         </tr>
 
         <!-- フッター -->
         <tr>
-            <td colspan="2" class="footer-cell">
+            <td colspan="2" class="footer-cell font-retro">
+                <span class="blink-text">★ THANK YOU FOR VISITING ★</span><br>
                 Copyright (C) 2026 kojikoji81 All Rights Reserved.
             </td>
         </tr>
