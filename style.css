@@ -68,6 +68,11 @@ h1.site-title {
     text-shadow: 0 0 5px #00ff66;
 }
 
+h1.site-title marquee {
+    display: block;
+    vertical-align: middle;
+}
+
 /* レイアウトセル */
 td.sidebar-cell {
     width: 200px;
