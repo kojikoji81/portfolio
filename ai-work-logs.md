@@ -24,9 +24,6 @@
 - 技術スタックの「手法・領域」に `レコメンデーション` を追加・Push完了
 - 変更内容を `kojikoji81/portfolio` に Push 完了
 
-
-
-
 - サイドバー MENU から冗長な同ページ内スクロールリンクを外し、別ページ・メジャーコンテンツ間アクセス（トップ / 日記 / 日記作成ツール）に整理
 - トップページのメインエリア冒頭に横型目次バー (`INDEX: 📖 日記 | 👤 自己紹介 | 💻 技術スタック | 📁 実務経験`) を新設し、スムーズスクロール対応
 - サイドバーカレンダーの表記を `■ DIARY CALENDAR (緑色日付クリックで日記へ)` に明確化
@@ -38,7 +35,8 @@
   - `posts/index.json` および `diary/posts/index.json` に "2026-07-26" を追記更新
 - Gitにコミットおよび `portfolio-origin` (GitHub Pages: kojikoji81/portfolio) へPush完了
 
-
-
-
-
+## 2026-07-28
+### 作業内容
+- 動く文字アニメーション（Marquee, Wavy Rainbow, Blink, Cursor Trail）の試験実装
+- ユーザー指示に基づき変更を取り消し、リバート (`git revert`) を実行して変更前の状態へ復元
+- 変更内容を GitHub (`kojikoji81/portfolio`) に Push 完了
