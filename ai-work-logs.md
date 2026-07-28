@@ -39,4 +39,5 @@
 ### 作業内容
 - 動く文字アニメーション（Marquee, Wavy Rainbow, Blink, Cursor Trail）の試験実装
 - ユーザー指示に基づき変更を取り消し、リバート (`git revert`) を実行して変更前の状態へ復元
+- トップページ (`index.html`) の日記紹介エリアから「最新エントリー：...」の非表示（削除）リクエストに対応
 - 変更内容を GitHub (`kojikoji81/portfolio`) に Push 完了
